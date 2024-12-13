@@ -3,12 +3,14 @@
 ## Prerequisites
 - [Gromacs](https://www.gromacs.org/)
 - [curl](https://curl.se/)
+- [make](https://www.gnu.org/software/make/)
 
 ## Quick Start
 > [!TIP]
 > You can run the commands sequentially by your own or run the shell script:
 ```bash
 ./run.sh
+./run_v2.sh   # to run using the 100k.gro file
 ```
 > [!TIP]
 > Also, if you want to clean the generated files, run:
@@ -27,6 +29,8 @@ gmx pdb2gmx -f filamento-chitosa_clean.pdb -o filamento-chitosa_processed.gro -w
 ```
 > We will use the all-atom **`OPLS`** force field, so type **`15`** at the command prompt, followed by `Enter`
 
+> [!NOTE]
+> We already have the generated topology, [`100k.gro`](100k.gro) is equivalent to `filamento-chitosa_processed.gro` (I guess) 
 
 ### Simulating a simple aqueous system
 ```bash

@@ -1,15 +1,11 @@
 #!/bin/bash
 set -xe
 
-echo "Generating Topology"
-grep -v HOH filamento-chitosa.pdb > filamento-chitosa_clean.pdb
-gmx pdb2gmx -f filamento-chitosa_clean.pdb -o filamento-chitosa_processed.gro -water spce <<EOF
-15
-EOF
-echo "------------------------------------------------------------------------"
+# We already have the generated topology
+# 100k.gro is equivalent to filamento-chitosa_processed.gro (I guess) 
 
 echo "Simulating a simple aqueous system"
-gmx editconf -f filamento-chitosa_processed.gro -o filamento-chitosa_newbox.gro -c -d 1.0 -bt cubic
+gmx editconf -f 100k.gro -o filamento-chitosa_newbox.gro -c -d 1.0 -bt cubic
 gmx solvate -cp filamento-chitosa_newbox.gro -cs spc216.gro -o filamento-chitosa_solv.gro -p topol.top
 echo "------------------------------------------------------------------------"
 
