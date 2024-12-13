@@ -1,6 +1,4 @@
 #!/bin/bash
-set -x
-
 echo "Cleaning target files..."
 
 exclude_files=(
@@ -8,7 +6,9 @@ exclude_files=(
     'README.md'
     'run.sh'
     'run_v2.sh'
+    'run_v3.sh'
     'clean.sh'
+    'LCQC_oplsaa.ff.zip'
     'filamento-chitosa.pdb'
     '100k.gro'
     'ions.mdp'
